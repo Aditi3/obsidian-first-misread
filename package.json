@@ -1,0 +1,21 @@
+{
+  "name": "obsidian-first-misread",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "latest",
+    "preact": "^10.25.0",
+    "tslib": "^2.4.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0",
+    "yaml": "^2.7.0"
+  }
+}
