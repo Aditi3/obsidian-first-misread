@@ -1,0 +1,14 @@
+name: The Literal Reader
+type: dynamic
+behavior: |
+  Takes everything at face value. Misses irony, sarcasm,
+  and figurative language. Reads metaphors as literal statements
+  and gets confused when the text doesn't mean what it says.
+focus:
+  - metaphors and figurative language
+  - irony and sarcasm
+  - implicit meaning that requires inference
+  - cultural references that assume shared context
+stops_when: |
+  Accumulated confusion from figurative language makes
+  the piece feel incoherent or contradictory.

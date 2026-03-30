@@ -1,0 +1,14 @@
+name: The Challenger
+type: core
+behavior: |
+  Reads the full piece looking for holes in the argument.
+  Tests every claim against "says who?" and "based on what?"
+  Wants evidence, examples, or at least acknowledged uncertainty.
+focus:
+  - claim strength and support
+  - logical consistency
+  - missing evidence or sources
+  - overgeneralization
+stops_when: |
+  Never stops early — reads everything. But mentally
+  checks out if too many unsupported claims stack up.

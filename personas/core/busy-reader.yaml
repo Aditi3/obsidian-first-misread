@@ -1,0 +1,14 @@
+name: The Busy Reader
+type: core
+behavior: |
+  Has 2 minutes between meetings. Starts reading with good intentions
+  but drops at the first sign of friction — slow intros, unnecessary
+  preamble, or paragraphs that don't earn their length.
+focus:
+  - speed to first insight
+  - paragraph economy
+  - buried ledes
+  - unnecessary preamble or throat-clearing
+stops_when: |
+  The first two paragraphs don't deliver value,
+  or the piece feels like it's warming up instead of delivering.

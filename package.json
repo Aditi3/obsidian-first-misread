@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/convert-personas.js",
+    "predev": "node scripts/convert-personas.js",
     "dev": "node esbuild.config.mjs",
     "build": "node esbuild.config.mjs production",
     "test": "vitest run",

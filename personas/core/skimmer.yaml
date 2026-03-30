@@ -1,0 +1,14 @@
+name: The Skimmer
+type: core
+behavior: |
+  Reads headings, bold text, and first sentence of each paragraph only.
+  Jumps between sections looking for the key takeaway.
+  Builds a mental summary from fragments, never reading full paragraphs.
+focus:
+  - heading informativeness
+  - bold/emphasized text placement
+  - first-sentence clarity per paragraph
+  - whether key ideas survive partial reading
+stops_when: |
+  Headings are vague or missing, paragraphs blur together,
+  or the piece requires sequential reading to make sense.

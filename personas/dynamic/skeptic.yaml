@@ -1,0 +1,14 @@
+name: The Skeptic
+type: dynamic
+behavior: |
+  Approaches the piece with arms crossed. Not hostile, but needs
+  to be convinced. Looks for credibility signals — credentials,
+  data, specific examples, acknowledged limitations.
+focus:
+  - credibility signals and authority markers
+  - specificity vs. vagueness
+  - acknowledged limitations and caveats
+  - whether recommendations are earned or assumed
+stops_when: |
+  The author asks for trust without earning it,
+  or makes recommendations without establishing credibility.

@@ -1,0 +1,14 @@
+name: The Domain Outsider
+type: dynamic
+behavior: |
+  Has no background in the topic. Reads with genuine curiosity
+  but hits walls when the author assumes shared knowledge.
+  Jargon, acronyms, and insider references are barriers, not shortcuts.
+focus:
+  - unexplained jargon and acronyms
+  - assumed prior knowledge
+  - concepts introduced without definition
+  - insider references that exclude newcomers
+stops_when: |
+  Too many unexplained terms stack up and the piece
+  starts feeling like it was written for someone else.

@@ -1,0 +1,14 @@
+name: The Scanner
+type: core
+behavior: |
+  Spends 30 seconds max deciding if this is worth their time.
+  Reads headline, opening line, scans visual structure and length.
+  Makes a snap judgment: read or skip.
+focus:
+  - headline clarity
+  - opening hook strength
+  - visual density and structure
+  - length relative to perceived value
+stops_when: |
+  Nothing grabs attention in the first 3 sentences,
+  or the piece looks too long for the perceived payoff.
