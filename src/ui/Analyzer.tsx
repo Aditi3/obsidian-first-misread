@@ -1,14 +1,16 @@
 import { useState } from "preact/hooks";
-import { Notice, type App } from "obsidian";
+import { Notice, requestUrl, type App } from "obsidian";
 import { PersonaProgress } from "./PersonaProgress";
 import { ResultsSummary } from "./ResultsSummary";
 import { RevisionNotes } from "./RevisionNotes";
 import { validateInput, runPipeline } from "../core/pipeline.js";
-import { createClient } from "../core/llm-client.js";
+import { createClient, setHttpFunction } from "../core/llm-client.js";
 import { createVaultHistory, contentHash } from "../core/history.js";
 import { diffFindings } from "../core/differ.js";
 import { interpretRevision } from "../core/interpreter.js";
 import type { FirstMisreadSettings } from "../settings";
+
+setHttpFunction(requestUrl);
 
 type Status = "idle" | "analyzing" | "complete" | "error";
 
