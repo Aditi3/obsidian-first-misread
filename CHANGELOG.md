@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1
+
+Security hardening.
+
+- Add XML trust boundaries to all LLM prompt templates (mitigates prompt injection via crafted articles)
+- Harden `.gitignore` (add `.env*`, `.claude/` rules)
+- Track `main.js` in repo for BRAT distribution
+
 ## 0.1.0
 
 Initial release.
