@@ -1,0 +1,253 @@
+/* First Misread — Obsidian Plugin Styles */
+/* Uses Obsidian CSS variables for theme compatibility */
+
+.first-misread-panel {
+  padding: 12px;
+}
+
+/* Idle state */
+.fm-idle {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.fm-hint {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Persona progress */
+.fm-persona-progress {
+  margin: 12px 0;
+}
+
+.fm-persona-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.fm-status-icon {
+  width: 16px;
+  text-align: center;
+}
+
+.fm-status-reading {
+  color: var(--interactive-accent);
+  animation: fm-spin 1s linear infinite;
+}
+
+.fm-status-done {
+  color: var(--color-green);
+}
+
+.fm-status-error {
+  color: var(--color-red);
+}
+
+@keyframes fm-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fm-finding-count {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-left: auto;
+}
+
+/* Finding cards */
+.fm-finding-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.fm-finding-card:hover {
+  background: var(--background-secondary);
+}
+
+.fm-finding-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fm-severity-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.fm-severity-high {
+  border-left: 3px solid var(--color-red);
+}
+
+.fm-severity-badge.fm-severity-high {
+  background: var(--color-red);
+}
+
+.fm-severity-medium {
+  border-left: 3px solid var(--color-yellow);
+}
+
+.fm-severity-badge.fm-severity-medium {
+  background: var(--color-yellow);
+  color: var(--text-normal);
+}
+
+.fm-severity-low {
+  border-left: 3px solid var(--text-muted);
+}
+
+.fm-severity-badge.fm-severity-low {
+  background: var(--text-muted);
+}
+
+.fm-finding-desc {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.fm-finding-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.fm-finding-detail {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.fm-passage {
+  border-left: 2px solid var(--interactive-accent);
+  padding-left: 10px;
+  margin: 8px 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Results summary */
+.fm-results-summary h3 {
+  margin: 16px 0 8px;
+}
+
+.fm-no-findings {
+  color: var(--color-green);
+  text-align: center;
+  padding: 12px;
+}
+
+/* Persona verdicts */
+.fm-persona-verdicts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fm-verdict-pill {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.fm-concerns {
+  background: color-mix(in srgb, var(--color-yellow) 15%, transparent);
+}
+
+.fm-pass {
+  background: color-mix(in srgb, var(--color-green) 15%, transparent);
+}
+
+/* Revision notes */
+.fm-revision-notes {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+}
+
+.fm-diff-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.fm-diff-counts span {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.fm-diff-resolved {
+  background: color-mix(in srgb, var(--color-green) 20%, transparent);
+  color: var(--color-green);
+}
+
+.fm-diff-new {
+  background: color-mix(in srgb, var(--interactive-accent) 20%, transparent);
+  color: var(--interactive-accent);
+}
+
+.fm-diff-persists {
+  background: color-mix(in srgb, var(--color-yellow) 20%, transparent);
+  color: var(--color-yellow);
+}
+
+.fm-diff-regressed {
+  background: color-mix(in srgb, var(--color-red) 20%, transparent);
+  color: var(--color-red);
+}
+
+.fm-section {
+  margin: 8px 0;
+}
+
+.fm-section h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+}
+
+.fm-section ul {
+  margin: 4px 0;
+  padding-left: 20px;
+}
+
+.fm-section li {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Error state */
+.fm-error-text {
+  color: var(--color-red);
+}
+
+/* Buttons */
+.fm-btn-secondary {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--text-normal);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.fm-btn-secondary:hover {
+  background: var(--background-modifier-hover);
+}

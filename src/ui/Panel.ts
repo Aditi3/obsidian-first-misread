@@ -1,6 +1,7 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import { render, h } from "preact";
 import type FirstMisreadPlugin from "../main";
+import { Analyzer } from "./Analyzer";
 
 export const VIEW_TYPE = "first-misread-panel";
 
@@ -30,10 +31,10 @@ export class FirstMisreadView extends ItemView {
     container.addClass("first-misread-panel");
 
     render(
-      h("div", { class: "first-misread-placeholder" },
-        h("h3", null, "First Misread"),
-        h("p", null, "Open a note and click Analyze to begin.")
-      ),
+      h(Analyzer, {
+        app: this.app,
+        settings: this.plugin.settings,
+      }),
       container
     );
   }
