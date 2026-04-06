@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import { Notice, requestUrl, type App } from "obsidian";
 import { PersonaProgress } from "./PersonaProgress";
 import { ResultsSummary } from "./ResultsSummary";
@@ -25,6 +25,11 @@ interface Props {
   settings: FirstMisreadSettings;
 }
 
+function stripFrontmatter(text: string): string {
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+  return match ? text.slice(match[0].length) : text;
+}
+
 export function Analyzer({ app, settings }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [personas, setPersonas] = useState<PersonaState[]>([]);
@@ -32,6 +37,18 @@ export function Analyzer({ app, settings }: Props) {
   const [revisionNotes, setRevisionNotes] = useState<any>(null);
   const [diffs, setDiffs] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const ref = app.workspace.on("active-leaf-change", () => {
+      setStatus("idle");
+      setPersonas([]);
+      setResult(null);
+      setRevisionNotes(null);
+      setDiffs([]);
+      setError(null);
+    });
+    return () => app.workspace.offref(ref);
+  }, [app]);
 
   const analyze = async () => {
     const file = app.workspace.getActiveFile();
@@ -53,7 +70,8 @@ export function Analyzer({ app, settings }: Props) {
     setPersonas([]);
 
     try {
-      const text = await app.vault.read(file);
+      const raw = await app.vault.read(file);
+      const text = stripFrontmatter(raw);
       validateInput(text);
 
       const client = createClient(settings.provider, {

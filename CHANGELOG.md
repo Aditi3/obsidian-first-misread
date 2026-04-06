@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+Bug fixes.
+
+- Fix: reset panel state when switching notes (stale results no longer persist)
+- Fix: strip YAML frontmatter before analysis (frontmatter was getting flagged as misread)
+
 ## 0.1.1
 
 Security hardening.

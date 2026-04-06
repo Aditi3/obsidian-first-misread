@@ -1,7 +1,7 @@
 {
   "id": "first-misread",
   "name": "First Misread",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "1.2.0",
   "description": "Stress-test your writing with synthetic reader personas. Find the first place your draft gets misunderstood.",
   "author": "Aviral Vaid",
