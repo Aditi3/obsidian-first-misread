@@ -22,17 +22,17 @@ Personas define *how* a simulated reader approaches your text. Each has a readin
 
 | Persona | What they test |
 |---------|---------------|
-| The Skimmer | Do headings and bold text carry the message alone? |
-| The Scanner | Can someone find the key point in 15 seconds? |
+| The Skimmer | Does the piece survive non-linear, partial reading? |
 | The Busy Reader | Does the opening earn enough interest to keep reading? |
 | The Hook Judge | Does the first line work? |
-| The Challenger | Are claims backed up? |
-| The Voice Editor | Is the voice consistent and distinctive? |
-| Sensitivity Scanner | Anything that could land badly out of context? |
+| The Skeptic | Are claims supported — logically and with credibility? |
+| The Sensitivity Scanner | Anything that could land badly out of context? |
+| The Voice Editor | Is the voice consistent, authentic, and cringe-free? |
+| The Executor | Can the reader actually do something with this? |
 
 **Dynamic personas** (selected per-analysis based on content):
 
-The Skeptic, Literal Reader, Domain Outsider, Emotional Reader, Scope Cop, Mirror Seeker, Cringe Detector, Visualizer, Arc Reader.
+Literal Reader, Domain Outsider, Emotional Reader, Scope Cop, Mirror Seeker, Visualizer, Arc Reader, Contrarian, First Principles Thinker, Expansionist, Outsider, Troll.
 
 **Custom personas**: Drop a YAML file in `personas/custom/` to define your own.
 
@@ -84,4 +84,4 @@ npm run dev
 
 ## License
 
-MIT
+[MIT](LICENSE)
