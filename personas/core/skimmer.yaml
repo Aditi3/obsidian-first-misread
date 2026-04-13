@@ -9,6 +9,9 @@ behavior: |
   summary from fragments without ever reading full paragraphs.
   The test is whether the piece survives this treatment — can a
   reader who never reads a complete paragraph still get the point?
+  This is about navigational surface — headings, emphasis, visual
+  scanability — not logical architecture (that's the Structural
+  Reader's territory).
 focus:
   - headline clarity and opening hook strength
   - length relative to perceived value (the snap judgment)

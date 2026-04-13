@@ -70,7 +70,7 @@ const CORE_PERSONAS = [
   {
     "name": "The Skimmer",
     "type": "core",
-    "behavior": "Reads the way most people actually read online. Starts with a\n30-second snap judgment — headline, opening line, visual density,\nlength vs. perceived payoff — and decides read-or-skip. If they\nstay, they don't read sequentially. They jump: headings, bold text,\nfirst sentence of each paragraph, pull quotes. Builds a mental\nsummary from fragments without ever reading full paragraphs.\nThe test is whether the piece survives this treatment — can a\nreader who never reads a complete paragraph still get the point?\n",
+    "behavior": "Reads the way most people actually read online. Starts with a\n30-second snap judgment — headline, opening line, visual density,\nlength vs. perceived payoff — and decides read-or-skip. If they\nstay, they don't read sequentially. They jump: headings, bold text,\nfirst sentence of each paragraph, pull quotes. Builds a mental\nsummary from fragments without ever reading full paragraphs.\nThe test is whether the piece survives this treatment — can a\nreader who never reads a complete paragraph still get the point?\nThis is about navigational surface — headings, emphasis, visual\nscanability — not logical architecture (that's the Structural\nReader's territory).\n",
     "focus": [
       "headline clarity and opening hook strength",
       "length relative to perceived value (the snap judgment)",
@@ -81,6 +81,22 @@ const CORE_PERSONAS = [
       "visual density and structural scanability"
     ],
     "stops_when": "Nothing grabs attention in the first 3 sentences, headings are\nvague or missing, paragraphs blur together, or the piece\nrequires sequential reading to make any sense at all.\n"
+  },
+  {
+    "name": "The Structural Reader",
+    "type": "core",
+    "behavior": "Reads the draft as an object — not simulating a reader experience\nbut analyzing how the piece is built. Three concerns, in order:\n\n1. Duplication detection: Are there two versions of the same section,\nrepeated arguments, or parallel passages covering the same ground in\ndifferent words? This includes spliced drafts where earlier and later\nversions coexist, arguments restated with slightly different framing,\nand examples that make the same point twice. Textual duplication\n(near-identical phrasing) and structural duplication (the same idea\nargued from a different angle without adding anything) both count.\n\n2. Thesis extraction: Name what the piece is actually trying to say,\nin one sentence. Not \"the piece is about X\" (too vague) but \"the\nreal thesis is [specific claim], and it lives in [location].\" If the\nthesis isn't in the opening, say where it actually is — many drafts\nbury their real point in the middle or near the end.\n\n3. Spine identification: Which sections are load-bearing — remove\nthem and the piece collapses — vs. which are ornamental — nice but\ncuttable without losing the argument? This helps the author know\nwhere to invest revision energy and what can be sacrificed for\nlength or focus.\n\nDoes NOT comment on voice, register, or tone (that's the Voice\nEditor's job). Does NOT comment on reader experience, pacing, or\nengagement (that's the Arc Reader's, Busy Reader's, etc.). Does\nNOT suggest rewrites.\n",
+    "focus": [
+      "parallel passages or sections covering the same ground in different words",
+      "spliced draft artifacts — two versions of the same section coexisting",
+      "arguments restated with different framing without adding new substance",
+      "examples that make the same point as an earlier example",
+      "thesis location — where the real claim lives, whether that's the opening or buried later",
+      "thesis specificity — can it be stated as one concrete sentence",
+      "load-bearing sections that the argument depends on",
+      "ornamental sections that are cuttable without losing the argument"
+    ],
+    "stops_when": "Never stops — reads the full piece. Structural issues are often\ninvisible at the paragraph level and only emerge from seeing the\nwhole draft as a single object.\n"
   },
   {
     "name": "The Voice Editor",
@@ -107,7 +123,7 @@ const DYNAMIC_PERSONAS = [
   {
     "name": "The Arc Reader",
     "type": "dynamic",
-    "behavior": "Reads for narrative momentum — does each section raise the stakes,\nshift the frame, or deepen the question? Treats section breaks as\npromises: \"the next part will take you somewhere new.\" Flags sections\nthat repeat the same emotional beat, circle back without adding\nanything, or feel like the author got stuck and wrote sideways.\nSensitive to pacing — a 1500-word essay has maybe 4-5 sections,\nand each one needs to do distinct work. Also notices when the ending\nresolves too neatly for the complexity of what came before, or when\nit stays so open that the reader feels cheated.\n",
+    "behavior": "Reads for narrative momentum — does each section raise the stakes,\nshift the frame, or deepen the question? Treats section breaks as\npromises: \"the next part will take you somewhere new.\" Flags sections\nthat repeat the same emotional beat, circle back without adding\nanything, or feel like the author got stuck and wrote sideways.\nThis is about pacing and momentum, not textual duplication — if two\nsections make the same point in different words, that's a structural\nproblem (Structural Reader's territory); if a section retreads the\nsame emotional ground without escalating, that's an arc problem.\nSensitive to pacing — a 1500-word essay has maybe 4-5 sections,\nand each one needs to do distinct work. Also notices when the ending\nresolves too neatly for the complexity of what came before, or when\nit stays so open that the reader feels cheated.\n",
     "focus": [
       "whether each section advances the piece or treads water",
       "pacing across the full arc — does momentum build or stall",
@@ -223,9 +239,9 @@ const DYNAMIC_PERSONAS = [
   {
     "name": "The Scope Cop",
     "type": "dynamic",
-    "behavior": "Counts thesis-level claims. A 1500-word essay can land one idea\nthoroughly or two ideas if they genuinely build on each other.\nThree is suspicious. Four is a series pitch disguised as a single\npiece. Reads the full draft asking: \"what is this piece actually\nabout?\" — and if the answer requires an \"and\" or \"but also,\" the\nscope is probably too wide. Distinguishes between supporting\nexamples (fine — they serve the main idea) and new conceptual\nmoves (not fine — they compete with it). Especially alert to the\npattern where an analytical writer keeps adding layers of insight\nbecause each one feels too interesting to cut. The piece gets\nricher and less focused at the same time. The fix is usually\nnot to remove ideas but to promote one and demote the rest to\nsupporting evidence.\n",
+    "behavior": "Reads as someone who can't figure out what this piece is about.\nNot analyzing architecture — experiencing unfocus. A 1500-word\nessay can land one idea thoroughly or two ideas if they genuinely\nbuild on each other. Three is suspicious. Four is a series pitch\ndisguised as a single piece. The constant test: \"what is this piece\nactually about?\" — and if the answer requires an \"and\" or \"but\nalso,\" the scope is probably too wide. Distinguishes between\nsupporting examples (fine — they serve the main idea) and new\nconceptual moves (not fine — they compete with it). Especially\nalert to the pattern where an analytical writer keeps adding layers\nof insight because each one feels too interesting to cut. The piece\ngets richer and less focused at the same time. The fix is usually\nnot to remove ideas but to promote one and demote the rest to\nsupporting evidence.\n",
     "focus": [
-      "number of distinct thesis-level claims vs word count",
+      "the reader's felt experience of unfocus — \"I can't tell what this is about\"",
       "whether supporting examples serve the main idea or introduce new ones",
       "the \"and also\" problem — ideas that compete instead of compound",
       "analytical pieces that keep adding layers instead of going deeper",

@@ -318,6 +318,7 @@ export function Analyzer({ app, settings }: Props) {
           <ResultsSummary
             aggregatedFindings={result.aggregatedFindings}
             personaResults={result.personaResults}
+            strengths={result.strengths}
             onHighlight={highlightPassage}
           />
           <button class="fm-btn-secondary" onClick={() => { setStatus("idle"); analyzedPathRef.current = null; }}>

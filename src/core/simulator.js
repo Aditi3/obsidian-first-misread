@@ -8,7 +8,7 @@ Return your findings as JSON with this exact structure:
   "overall_verdict": "One-sentence summary of this persona's experience",
   "findings": [
     {
-      "type": "confusion | lost_interest | misread | skipped",
+      "type": "confusion | lost_interest | misread | skipped | duplication | structural",
       "severity": "high | medium | low",
       "passage": "The exact text that caused the issue",
       "location": "paragraph N, sentence N",

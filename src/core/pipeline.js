@@ -3,6 +3,7 @@ import { getCorePersonas, getDynamicPersonas } from './personas.js';
 import { selectDynamicPersonas } from './selector.js';
 import { simulateAll } from './simulator.js';
 import { aggregateFindings } from './aggregator.js';
+import { identifyStrengths } from './strengths.js';
 
 const MIN_WORDS = 50;
 const MAX_WORDS = 2500;
@@ -40,6 +41,8 @@ export async function runPipeline(client, text, onProgress) {
   const personaResults = await simulateAll(client, allPersonas, text, metadata, emit);
   const aggregatedFindings = aggregateFindings(personaResults);
 
+  const strengths = await identifyStrengths(client, text, metadata, personaResults);
+
   emit({ type: 'complete' });
 
   return {
@@ -47,5 +50,6 @@ export async function runPipeline(client, text, onProgress) {
     personas: allPersonas,
     personaResults,
     aggregatedFindings,
+    strengths,
   };
 }

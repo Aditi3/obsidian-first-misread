@@ -1,4 +1,4 @@
-const VALID_FINDING_TYPES = ['confusion', 'lost_interest', 'misread', 'skipped'];
+const VALID_FINDING_TYPES = ['confusion', 'lost_interest', 'misread', 'skipped', 'duplication', 'structural'];
 const VALID_SEVERITIES = ['high', 'medium', 'low'];
 
 export function createContentMetadata(fields) {

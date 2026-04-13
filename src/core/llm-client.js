@@ -11,9 +11,35 @@ function stripCodeFences(text) {
   return text;
 }
 
+function extractJSON(text) {
+  const stripped = stripCodeFences(text);
+
+  // Fast path: already valid JSON after fence stripping
+  try {
+    JSON.parse(stripped);
+    return stripped;
+  } catch { /* fall through */ }
+
+  // Find first { or [ and extract balanced JSON
+  for (const [startChar, endChar] of [['{', '}'], ['[', ']']]) {
+    const start = stripped.indexOf(startChar);
+    if (start === -1) continue;
+    const end = stripped.lastIndexOf(endChar);
+    if (end <= start) continue;
+    const candidate = stripped.slice(start, end + 1);
+    try {
+      JSON.parse(candidate);
+      return candidate;
+    } catch { continue; }
+  }
+
+  // Nothing worked — return fence-stripped text for caller's error
+  return stripped;
+}
+
 function parseJSON(text) {
   try {
-    return JSON.parse(stripCodeFences(text));
+    return JSON.parse(extractJSON(text));
   } catch {
     return null;
   }
